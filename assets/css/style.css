@@ -471,23 +471,29 @@ h6 {
   padding: 50px 30px;
   position: relative;
   overflow: hidden;
-  background: url('../img/projects/_circle_project/circle2_blurred.jpg');
-  box-shadow: 0 0 29px 0 rgba(18, 66, 101, 0.08);
-  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 29px 0 rgba(18, 66, 101, 0.08)
+  transition: all 0.1s ease-in-out;
   border-radius: 8px;
-  z-index: 1;
-
+  border: 3px solid #3498db;
+  z-index: 0;
 }
 
-#hero .icon-box1 {
+
+  /* background: url('../img/projects/_waiting_screen/samplePhoto2.png') no-repeat center center; */
+#hero .icon-box::before {
+  content: "";
   padding: 50px 30px;
-  position: relative;
+  position: absolute;
   overflow: hidden;
-  background: url('../img/circle_project/circle2.jpg');
-  box-shadow: 0 0 29px 0 rgba(18, 66, 101, 0.08);
+  inset: 0;
+  background: url('../img/projects/_sierpinski_triangle_project/triangle5.png') no-repeat center center;
+  background-size: cover;
+  box-shadow: 0 0 29px 0 rgba(18, 66, 101, 0.08)
   transition: all 0.3s ease-in-out;
   border-radius: 8px;
-  z-index: 1;
+  z-index: -1;
+  filter: blur(2px);
+  opacity: 0.8;
 }
 
 
@@ -498,14 +504,16 @@ h6 {
 }
 
 #hero .icon-box .title a {
-  color: #124265;
+  color: #2487ce;
   transition: 0.3s;
 }
 
 #hero .icon-box .description {
+  background-color: #0000005F;
   font-size: 15px;
   line-height: 28px;
   margin-bottom: 0;
+  color: #AAAAAA;
 }
 
 #hero .icon-box .icon {
@@ -518,12 +526,22 @@ h6 {
   color: #2487ce;
 }
 
+#hero .icon-box:hover .icon {
+  color: #75CCFF;
+
+}
+
 #hero .icon-box:hover {
   transform: scale(1.08);
 }
 
 #hero .icon-box:hover .title a {
-  color: #2487ce;
+  color: #75CCFF;
+}
+
+#hero .icon-box:hover .description {
+  color: #FFFFFF;
+  background-color: #000000AF;
 }
 
 @media (min-width: 1024px) {
@@ -585,6 +603,35 @@ section {
   margin-bottom: 0;
   font-size: 14px;
   color: #919191;
+}
+
+.about-me {
+  max-width: 800px;              /* keeps it readable on large screens */
+  margin: 0 auto;                 /* center horizontally */
+  padding: 40px 30px;
+  background: #f9fafc;            /* soft neutral background */
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.8;
+  color: #2d2d2d;
+}
+
+.about-me p {
+  margin-bottom: 1.6em;
+  font-size: 1.05rem;
+}
+
+.about-me b {
+  color: #1e4b8c;                /* highlight keywords (deep blue) */
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .about-me {
+    padding: 25px 20px;
+    font-size: 1rem;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -935,7 +982,7 @@ section {
   padding: 70px 20px 80px 20px;
   transition: all ease-in-out 0.3s;
   background: #fff;
-  box-shadow: 0px 5px 90px 0px rgba(110, 123, 131, 0.05);
+  box-shadow: 0px 5px 90px 0px rgba(110, 123, 131, 0.45);
 }
 
 .services .icon-box .icon {
@@ -945,8 +992,9 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: ease-in-out 0.3s;
+  transition: ease-in-out 0.2s;
   position: relative;
+  box-shadow: 0px 5px 90px 0px rgba(110, 123, 131, 0.45);
 }
 
 .services .icon-box .icon i {
@@ -1288,6 +1336,7 @@ section {
 }
 
 .portfolio-details .portfolio-info h3 {
+  color: #FFFFFF;
   font-size: 22px;
   font-weight: 700;
   margin-bottom: 20px;
@@ -1296,6 +1345,7 @@ section {
 }
 
 .portfolio-details .portfolio-info ul {
+  color: #FFFFFF;
   list-style: none;
   padding: 0;
   font-size: 15px;
@@ -1303,10 +1353,12 @@ section {
 
 .portfolio-details .portfolio-info ul li+li {
   margin-top: 10px;
+  color: #FFFFFF;
 }
 
 .portfolio-details .portfolio-description {
   padding-top: 30px;
+  color: #FFFFFF;
 }
 
 .portfolio-details .portfolio-description h2 {
